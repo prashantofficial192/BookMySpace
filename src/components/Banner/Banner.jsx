@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,6 +7,7 @@ import "./Banner.css";
 import "./responsive.css"
 
 const Banner = () => {
+    const navigate = useNavigate();
     const settings = {
         dots: true,
         autoplay: true,
@@ -24,7 +26,7 @@ const Banner = () => {
                     <div className="banner-content">
                         <h2>Celebrate in Style</h2>
                         <p>Find the perfect venue for your weddings, parties, and corporate events.</p>
-                        <button>Explore Banquets</button>
+                        <button onClick={() => navigate('/banquet')}>Explore Banquets</button>
                     </div>
 
                 </div>
@@ -32,14 +34,14 @@ const Banner = () => {
                     <div className="banner-content">
                         <h2>Play on Premium Turfs</h2>
                         <p>Book top-quality turfs for football, cricket, and other sports activities.</p>
-                        <button>Explore Turfs</button>
+                        <button onClick={() => navigate('/turf')}>Explore Turfs</button>
                     </div>
                 </div>
                 <div className='restaurant banner-item'>
                     <div className="banner-content">
                         <h2>Discover Exquisite Dining</h2>
                         <p>Experience culinary delights from around the world in our top-rated restaurants.</p>
-                        <button>Explore Restaurants</button>
+                        <button onClick={() => navigate('/restaurant')}>Explore Restaurants</button>
                     </div>
                 </div>
             </Slider>

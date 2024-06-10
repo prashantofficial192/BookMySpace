@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Turf.css';
 import "./Tresponsive.css"
 
@@ -7,34 +8,35 @@ const turfList = [
         id: 1,
         bannerImage: "https://lh5.googleusercontent.com/p/AF1QipNLZu2bMMMttplNhJvnZUq0Z6e5f9q2yquhHqen=w426-h240-k-no",
         name: "City Sports Club",
-        location: "Downtown",
+        location: "Vadodara",
         sports: "Football, Cricket",
         ratings: 4.8
     },
     {
         id: 2,
-        bannerImage: "https://lh5.googleusercontent.com/p/AF1QipNLZu2bMMMttplNhJvnZUq0Z6e5f9q2yquhHqen=w426-h240-k-no",
-        name: "Greenfield Sports Complex",
-        location: "Uptown",
+        bannerImage: "https://lh5.googleusercontent.com/p/AF1QipMGWJ9Y-Ij_F6bOowD6At6-ulhadAf3iKmbz2-h=w426-h240-k-no",
+        name: "Turf Park",
+        location: "Surat",
         sports: "Football, Tennis",
         ratings: 4.6
     },
     {
         id: 3,
-        bannerImage: "https://lh5.googleusercontent.com/p/AF1QipNLZu2bMMMttplNhJvnZUq0Z6e5f9q2yquhHqen=w426-h240-k-no",
-        name: "Elite Turf Arena",
-        location: "Midtown",
+        bannerImage: "https://lh5.googleusercontent.com/p/AF1QipNvEkvvto-46Y5nXskBXmLjfTIrqBTWumY9pSKY=w408-h306-k-no",
+        name: "Ballin Turf",
+        location: "Vesu",
         sports: "Football, Basketball",
         ratings: 4.9
     }
 ];
 
 const Turf = () => {
+    const navigate = useNavigate();
     return (
         <div className="turf-section">
             <div className="turf-header">
-                <h1 className="turf-title">Turf Fields</h1>
-                <button className="view-all-button">View All</button>
+                <h1 className="turf-title">Turf Parks</h1>
+                <button className="view-all-button" onClick={() => navigate('/turf')}>View All</button>
             </div>
             <div className="turf-container">
                 {turfList.map((turf) => (

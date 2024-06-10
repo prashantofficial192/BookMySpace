@@ -138,6 +138,7 @@ const RestaurantLayout = () => {
                                 <p className="restaurant-area">{restaurant.area}</p>
                                 <p className="restaurant-ratings">Rating: {restaurant.ratings}</p>
                             </div>
+                            <button className="restaurant-book-now-button">Book Now</button>
                         </div>
                     ))}
                 </div>

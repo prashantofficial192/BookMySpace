@@ -156,7 +156,7 @@ const Banquet = () => {
                                 <p className="banquet-capacity">Capacity: {banquet.capacity} guests</p>
                                 <p className="banquet-ratings">Rating: {banquet.ratings}</p>
                             </div>
-                            <button className="book-now-button">Book Now</button>
+                            <button className="banquet-book-now-button">Book Now</button>
                         </div>
                     ))}
                 </div>
