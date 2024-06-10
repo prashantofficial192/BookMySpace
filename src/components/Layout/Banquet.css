@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banquet-section {
+    padding: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    /* background-color: antiquewhite; */
+    border-radius: 20px;
+}
+
+.banquet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.banquet-title {
+    font-size: 2rem;
+    color: #333;
+}
+
+.view-all-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-all-button:hover {
+    background-color: #0056b3;
+}
+
+.banquet-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.banquet-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 350px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.banquet-card:hover {
+    transform: translateY(-10px);
+}
+
+.banquet-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.banquet-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.banquet-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.banquet-location {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.banquet-capacity,
+.banquet-ratings {
+    font-size: 1rem;
+    color: #ff9800;
+    margin: 10px auto;
+}

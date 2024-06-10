@@ -1,0 +1,79 @@
+/* Media Queries for Smaller Screens */
+
+@media (max-width: 768px) {
+    .restaurant-section {
+        padding: 20px;
+        gap: 20px;
+        background-color: white;
+        width: 90%;
+    }
+
+    .restaurant-title {
+        font-size: 1.5rem;
+    }
+
+    .view-all-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .restaurant-container {
+        gap: 20px;
+    }
+
+    .restaurant-card {
+        width: 450px;
+    }
+
+    .restaurant-image {
+        height: 250px;
+    }
+
+    .restaurant-name {
+        font-size: 1.2rem;
+    }
+
+    .restaurant-area,
+    .restaurant-ratings {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurant-section {
+        padding: 20px;
+        gap: 30px;
+        margin: 20px auto;
+        width: 95%;
+    }
+
+    .restaurant-title {
+        font-size: 1.7rem;
+    }
+
+    .view-all-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .restaurant-container {
+        gap: 30px;
+    }
+
+    .restaurant-card {
+        width: 350px;
+    }
+
+    .restaurant-image {
+        height: 200px;
+    }
+
+    .restaurant-name {
+        font-size: 1.2rem;
+    }
+
+    .restaurant-area,
+    .restaurant-ratings {
+        font-size: 0.8rem;
+    }
+}

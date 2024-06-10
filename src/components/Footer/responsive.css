@@ -1,0 +1,35 @@
+@media screen and (max-width: 768px) {
+    .footer-content-center ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .footer-content-right .social-icons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .footer-content {
+        gap: 30px;
+    }
+
+    .footer {
+        gap: 20px;
+    }
+
+    .footer-content-left {
+        gap: 25px;
+    }
+
+    .footer-section {
+        padding: 10px;
+    }
+
+    .footer-content-left>p {
+        line-height: 1.5;
+    }
+
+    .footer-content-center {
+        gap: 20px;
+    }
+}

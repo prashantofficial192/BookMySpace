@@ -1,0 +1,68 @@
+@media (max-width: 768px) {
+
+    .slick-slider,
+    .slick-list,
+    .slick-track {
+        width: 95vw;
+        height: 85vh;
+    }
+
+    .banner-item h2 {
+        font-size: 2rem;
+    }
+
+    .banner-item p {
+        font-size: 1rem;
+    }
+
+    .banner-item button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .banner-content {
+        gap: 20px;
+        height: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        height: 50vh;
+        /* background-color: blue; */
+    }
+
+    .slick-slider,
+    .slick-list,
+    .slick-track {
+        width: 95vw;
+        height: 35vh;
+        /* background-color: aqua; */
+    }
+
+    .banner-item h2 {
+        font-size: 1.5rem;
+    }
+
+    .banner-item p {
+        font-size: 0.8rem;
+    }
+
+    .banner-item button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .banner-content {
+        gap: 15px;
+        height: 300px;
+    }
+
+    .banner-item.banquet,
+    .banner-item.turf,
+    .banner-item.restaurant {
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+    }
+}

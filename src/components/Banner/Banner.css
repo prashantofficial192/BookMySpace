@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aquamarine; */
+}
+
+.slick-slider,
+.slick-list,
+.slick-track {
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    color: white;
+    font-size: 5rem;
+}
+
+.banner-item {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-item.banquet,
+.banner-item.turf,
+.banner-item.restaurant {
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+}
+
+.banner-item.banquet {
+    background-image: url("../assets/Banner1.jpg");
+}
+
+.banner-item.turf {
+    background-image: url("../assets/Banner2.jpg");
+}
+
+.banner-item.restaurant {
+    background-image: url("../assets/Banner3.jpg");
+}
+
+.banner-item h2 {
+    font-size: 3rem;
+    color: white;
+}
+
+.banner-item p {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.banner-item button {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.banner-item button:hover {
+    background-color: #0056b3;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* margin-top: 12%; */
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 700px;
+}
