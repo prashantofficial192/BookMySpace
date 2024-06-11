@@ -16,12 +16,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
-    padding: 40px;
+    padding: 10px;
     border-radius: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     z-index: 1001;
     max-width: 500px;
-    width: 90%;
+    width: 10%;
     box-sizing: border-box;
     text-align: center;
 }
@@ -52,6 +52,23 @@
 /* Radio Button Styling */
 .banquet-booking-options input[type="radio"] {
     margin-right: 10px;
+}
+
+/* Customer Details Input */
+.banquet-booking-customer-details {
+    margin: 15px auto;
+}
+
+.banquet-booking-customer-details input {
+    width: calc(100% - 10px);
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
 }
 
 /* Days and Date Selection Inputs */
@@ -115,33 +132,4 @@
 .banquet-booking-close-button:hover {
     background-color: #e53935;
     /* Slightly darker red on hover */
-}
-
-/* Input Fields Styling for better user experience */
-.banquet-booking-options input[type="text"],
-.banquet-booking-options select {
-    width: calc(100% - 20px);
-    /* Full width minus padding */
-    padding: 12px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-    text-align: center;
-}
-
-/* Section Title Styling */
-.banquet-booking-section-title {
-    font-size: 20px;
-    margin-bottom: 15px;
-    color: #444;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 5px;
-}
-
-/* Margin for better spacing */
-.banquet-booking-section {
-    margin-bottom: 25px;
 }

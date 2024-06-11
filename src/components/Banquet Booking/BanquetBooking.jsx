@@ -6,6 +6,8 @@ const BanquetBooking = ({ banquet, onClose }) => {
     const [selectedDays, setSelectedDays] = useState(1);
     const [selectedDate, setSelectedDate] = useState('');
     const [totalCharges, setTotalCharges] = useState(15000);
+    const [customerName, setCustomerName] = useState('');
+    const [mobileNumber, setMobileNumber] = useState('');
 
     if (!banquet) {
         return null;
@@ -27,8 +29,8 @@ const BanquetBooking = ({ banquet, onClose }) => {
     };
 
     const handleBookingConfirmation = () => {
-        if (!selectedDate) {
-            alert("Please select a date.");
+        if (!selectedDate || !customerName || !mobileNumber) {
+            alert("Please fill in all fields.");
             return;
         }
 
@@ -39,6 +41,8 @@ const BanquetBooking = ({ banquet, onClose }) => {
             days: selectedDays,
             date: selectedDate,
             totalCharges,
+            customerName,
+            mobileNumber,
         };
 
         const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
@@ -84,6 +88,22 @@ const BanquetBooking = ({ banquet, onClose }) => {
                         />
                         Inner Hall and Outer Lawn
                     </label>
+                </div>
+                <div className="banquet-booking-customer-details">
+                    <label htmlFor="customerName">Customer Name:</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        value={customerName}
+                        onChange={(e) => setCustomerName(e.target.value)}
+                    />
+                    <label htmlFor="mobileNumber">Mobile Number:</label>
+                    <input
+                        type="tel"
+                        id="mobileNumber"
+                        value={mobileNumber}
+                        onChange={(e) => setMobileNumber(e.target.value)}
+                    />
                 </div>
                 <div className="banquet-booking-days-selection">
                     <label htmlFor="banquet-days">Select Number of Days:</label>

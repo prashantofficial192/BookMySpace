@@ -1,0 +1,107 @@
+.turf-booking-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.turf-booking-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #343a40;
+    font-size: 1.8em;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+}
+
+.turf-booking-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.turf-booking-field {
+    margin-bottom: 15px;
+}
+
+.turf-booking-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.turf-booking-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+    font-size: 1em;
+}
+
+.turf-booking-total {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.turf-booking-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.turf-booking-button,
+.turf-close-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.turf-booking-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.turf-close-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.turf-booking-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Styles */
+@media (max-width: 576px) {
+    .turf-booking-container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .turf-booking-title {
+        font-size: 1.5em;
+    }
+
+    .turf-booking-input {
+        padding: 8px;
+        font-size: 0.9em;
+    }
+
+    .turf-booking-button,
+    .turf-close-button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}

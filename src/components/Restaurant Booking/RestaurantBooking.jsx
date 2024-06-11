@@ -1,4 +1,3 @@
-// RestaurantBooking.jsx
 import React, { useState } from 'react';
 import './RestaurantBooking.css';
 
@@ -6,6 +5,8 @@ const RestaurantBooking = ({ restaurant, onClose }) => {
     const [selectedTable, setSelectedTable] = useState(null);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
+    const [customerName, setCustomerName] = useState('');
+    const [mobileNumber, setMobileNumber] = useState('');
 
     if (!restaurant) {
         return null;
@@ -24,12 +25,15 @@ const RestaurantBooking = ({ restaurant, onClose }) => {
     };
 
     const handleBooking = () => {
-        if (selectedTable && selectedDate && selectedTime) {
+        if (selectedTable && selectedDate && selectedTime && customerName && mobileNumber) {
             const bookingDetails = {
+                type: 'restaurant',
                 restaurantName: restaurant.name,
                 tableCapacity: selectedTable.capacity,
                 date: selectedDate,
                 time: selectedTime,
+                customerName,
+                mobileNumber,
             };
 
             const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
@@ -52,7 +56,7 @@ const RestaurantBooking = ({ restaurant, onClose }) => {
                 onClose();
             }
         } else {
-            alert('Please select a table, date, and time.');
+            alert('Please fill in all fields.');
         }
     };
 
@@ -73,6 +77,20 @@ const RestaurantBooking = ({ restaurant, onClose }) => {
                     ))}
                 </div>
                 <div className="date-time-picker">
+                    <label htmlFor="customerName">Customer Name:</label>
+                    <input
+                        type="text"
+                        id="customerName"
+                        value={customerName}
+                        onChange={(e) => setCustomerName(e.target.value)}
+                    />
+                    <label htmlFor="mobileNumber">Mobile Number:</label>
+                    <input
+                        type="tel"
+                        id="mobileNumber"
+                        value={mobileNumber}
+                        onChange={(e) => setMobileNumber(e.target.value)}
+                    />
                     <label htmlFor="date">Select Date:</label>
                     <input
                         type="date"

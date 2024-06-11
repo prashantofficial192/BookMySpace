@@ -52,15 +52,19 @@
 .restaurant-card {
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    border: 1px solid rgb(222, 220, 220);
     overflow: hidden;
     width: 350px;
     transition: transform 0.3s;
     cursor: pointer;
+    height: 350px;
+    animation: myAnim 2s ease 0s 1 normal forwards;
 }
 
 .restaurant-card:hover {
     transform: translateY(-10px);
+    box-shadow: 9px 9px 0px 0px #f70202;
 }
 
 .restaurant-image {
@@ -89,4 +93,48 @@
 .restaurant-ratings {
     font-size: 1rem;
     color: #ff9800;
+}
+
+@keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
 }

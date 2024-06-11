@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./TurfLayout.css";
+import TurfBooking from '../Turf Booking/TurfBooking';
 
 const turfList1 = [
     {
@@ -76,10 +77,13 @@ const turfList1 = [
     }
 ];
 
+
 const TurfLayout = () => {
+    const [selectedTurf, setSelectedTurf] = useState(null);
     const [selectedSport, setSelectedSport] = useState('');
     const [selectedCity, setSelectedCity] = useState('');
     const [filteredTurfs, setFilteredTurfs] = useState(turfList1);
+    const [showBooking, setShowBooking] = useState(false);
 
     const handleSearch = () => {
         const filtered = turfList1.filter(turf => {
@@ -89,6 +93,17 @@ const TurfLayout = () => {
             );
         });
         setFilteredTurfs(filtered);
+    };
+
+    const handleBookNow = (sport, city, turf) => {
+        setSelectedTurf(turf);
+        setSelectedSport(sport);
+        setSelectedCity(city);
+        setShowBooking(true);
+    };
+
+    const handleCloseBooking = () => {
+        setShowBooking(false);
     };
 
     return (
@@ -118,7 +133,6 @@ const TurfLayout = () => {
                         className="turf-filter-select"
                     >
                         <option value="">All Cities</option>
-                        <option value="Downtown">Downtown</option>
                         <option value="Surat">Surat</option>
                         <option value="Vesu">Vesu</option>
                         <option value="Navsari">Navsari</option>
@@ -142,7 +156,12 @@ const TurfLayout = () => {
                                     <p className="turf-sports">{turf.sports}</p>
                                     <p className="turf-ratings">Rating: {turf.ratings}</p>
                                 </div>
-                                <button className="turf-book-now-button">Book Now</button>
+                                <button
+                                    className="turf-book-now-button"
+                                    onClick={() => handleBookNow(turf.sports, turf.location, turf)}
+                                >
+                                    Book Now
+                                </button>
                             </div>
                         ))
                     ) : (
@@ -150,6 +169,17 @@ const TurfLayout = () => {
                     )}
                 </div>
             </div>
+
+            {showBooking && (
+                <div className="turf-booking-modal">
+                    <TurfBooking
+                        selectedTurf={selectedTurf}
+                        selectedSport={selectedSport}
+                        selectedCity={selectedCity}
+                        onClose={handleCloseBooking}
+                    />
+                </div>
+            )}
         </>
     );
 };
