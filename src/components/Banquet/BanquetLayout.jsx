@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./BanquetLayout.css"
+import BanquetBooking from "../Banquet Booking/BanquetBooking"
 
 
 const banquetList = [
@@ -105,6 +106,8 @@ const Banquet = () => {
     const [capacity, setCapacity] = useState(0);
     const [ratings, setRatings] = useState(0);
     const [filteredBanquetList, setFilteredBanquetList] = useState(banquetList);
+    const [showBookingModal, setShowBookingModal] = useState(false);
+    const [selectedBanquet, setSelectedBanquet] = useState(null);
 
     const handleSearch = () => {
         const filtered = banquetList.filter(banquet => {
@@ -115,6 +118,16 @@ const Banquet = () => {
         });
         setFilteredBanquetList(filtered);
     };
+
+    const handleBookNow = (banquet) => {
+        setSelectedBanquet(banquet);
+        setShowBookingModal(true);
+    };
+
+    const handleCloseBookingModal = () => {
+        setShowBookingModal(false);
+    };
+
     return (
         <>
             <div className="filter-section">
@@ -156,13 +169,16 @@ const Banquet = () => {
                                 <p className="banquet-capacity">Capacity: {banquet.capacity} guests</p>
                                 <p className="banquet-ratings">Rating: {banquet.ratings}</p>
                             </div>
-                            <button className="banquet-book-now-button">Book Now</button>
+                            <button onClick={() => handleBookNow(banquet)} className="banquet-book-now-button">Book Now</button>
                         </div>
                     ))}
                 </div>
             </div>
+            {showBookingModal && (
+                <BanquetBooking banquet={selectedBanquet} onClose={handleCloseBookingModal} />
+            )}
         </>
     )
 }
 
-export default Banquet
+export default Banquet;

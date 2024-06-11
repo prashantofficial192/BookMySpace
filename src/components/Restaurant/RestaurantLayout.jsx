@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./RestaurantLayout.css"
+import RestaurantBooking from '../Restaurant Booking/RestaurantBooking';
 
 const restaurants = [
     {
@@ -89,9 +90,9 @@ const restaurants = [
 ];
 
 const RestaurantLayout = () => {
-
     const [area, setArea] = useState('');
     const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
+    const [selectedRestaurant, setSelectedRestaurant] = useState(null);
 
     const handleAreaChange = (e) => {
         setArea(e.target.value);
@@ -106,6 +107,13 @@ const RestaurantLayout = () => {
         }
     };
 
+    const handleBookNow = (restaurant) => {
+        setSelectedRestaurant(restaurant);
+    };
+
+    const handleCloseBooking = () => {
+        setSelectedRestaurant(null);
+    };
 
     return (
         <>
@@ -138,14 +146,16 @@ const RestaurantLayout = () => {
                                 <p className="restaurant-area">{restaurant.area}</p>
                                 <p className="restaurant-ratings">Rating: {restaurant.ratings}</p>
                             </div>
-                            <button className="restaurant-book-now-button">Book Now</button>
+                            <button className="restaurant-book-now-button" onClick={() => handleBookNow(restaurant)}>
+                                Book Now
+                            </button>
                         </div>
                     ))}
                 </div>
             </div>
+            {selectedRestaurant && <RestaurantBooking restaurant={selectedRestaurant} onClose={handleCloseBooking} />}
         </>
+    );
+};
 
-    )
-}
-
-export default RestaurantLayout
+export default RestaurantLayout;

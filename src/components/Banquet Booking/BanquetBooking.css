@@ -1,0 +1,147 @@
+/* Backdrop */
+.banquet-booking-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+/* Modal Container */
+.banquet-booking-modal-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    max-width: 500px;
+    width: 90%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.banquet-booking-modal-container>h2 {
+    margin: 10px auto;
+}
+
+.book-ban{
+    color: coral;
+}
+
+/* Booking Options */
+.banquet-booking-options {
+    margin-bottom: 30px;
+}
+
+/* Label Styles */
+.banquet-booking-options label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Radio Button Styling */
+.banquet-booking-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Days and Date Selection Inputs */
+.banquet-booking-days-selection,
+.banquet-booking-date-selection {
+    margin: 15px auto;
+}
+
+.banquet-booking-days-selection input,
+.banquet-booking-date-selection input {
+    width: calc(90% - 10px);
+    /* Full width minus padding */
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Total Charges */
+.banquet-booking-total-charges {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Buttons */
+.banquet-booking-confirm-button,
+.banquet-booking-close-button {
+    padding: 12px 24px;
+    margin-right: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+/* Confirm Button */
+.banquet-booking-confirm-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.banquet-booking-confirm-button:hover {
+    background-color: #0056b3;
+    /* Slightly darker green on hover */
+}
+
+/* Close Button */
+.banquet-booking-close-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.banquet-booking-close-button:hover {
+    background-color: #e53935;
+    /* Slightly darker red on hover */
+}
+
+/* Input Fields Styling for better user experience */
+.banquet-booking-options input[type="text"],
+.banquet-booking-options select {
+    width: calc(100% - 20px);
+    /* Full width minus padding */
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Section Title Styling */
+.banquet-booking-section-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #444;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Margin for better spacing */
+.banquet-booking-section {
+    margin-bottom: 25px;
+}

@@ -1,0 +1,140 @@
+/* RestaurantBooking.css */
+
+.booking-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.booking-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.res-name {
+    color: #e63946;
+}
+
+.table-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+.table {
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    font-size: 16px;
+}
+
+.table.selected {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.table:hover {
+    background: #e6f7ff;
+}
+
+.date-time-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.date-time-picker label {
+    text-align: left;
+}
+
+.date-time-picker input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.book-now-button,
+.close-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.book-now-button {
+    background: #007bff;
+    color: white;
+}
+
+.book-now-button:hover {
+    background: #0056b3;
+}
+
+.close-button {
+    background: #ccc;
+    margin-left: 10px;
+}
+
+.close-button:hover {
+    background: #999;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 600px) {
+    .table {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .date-time-picker {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .date-time-picker input {
+        padding: 8px;
+        font-size: 14px;
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .date-time-picker {
+        gap: 8px;
+    }
+
+    .date-time-picker input {
+        padding: 6px;
+        font-size: 12px;
+        max-width: 200px;
+    }
+}
