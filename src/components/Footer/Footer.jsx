@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom"
 import InstagramIcon from '@mui/icons-material/Instagram';
 import XIcon from '@mui/icons-material/X';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -17,11 +18,38 @@ const Footer = () => {
                     <div className="footer-content-center">
                         {/* <h2>Quick Links</h2> */}
                         <ul>
-                            <li>Home</li>
-                            <li>Restaurants</li>
-                            <li>Banquets</li>
-                            <li>Turfs</li>
-                            <li>Contact</li>
+                            <li>
+                                <NavLink
+                                    to="/"
+                                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                                >
+                                    Home
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/restaurant"
+                                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                                >
+                                    Restaurant
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/banquet"
+                                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                                >
+                                    Banquet
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink
+                                    to="/turf"
+                                    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
+                                >
+                                    Turf
+                                </NavLink>
+                            </li>
                         </ul>
                     </div>
                     <div className="footer-content-right">

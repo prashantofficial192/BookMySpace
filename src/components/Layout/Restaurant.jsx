@@ -35,7 +35,7 @@ const Restaurant = () => {
                 <h1 className="restaurant-title">Restaurants</h1>
                 <button className="view-all-button" onClick={() => navigate('/restaurant')}>View All</button>
             </div>
-            <div className="restaurant-container">
+            <div className="restaurant-container" onClick={() => navigate('/restaurant')}>
                 {restaurants.map((restaurant) => (
                     <div key={restaurant.id} className="restaurant-card">
                         <img src={restaurant.bannerImage} alt={restaurant.name} className="restaurant-image" />

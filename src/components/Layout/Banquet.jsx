@@ -40,7 +40,7 @@ const Banquet = () => {
                 <h1 className="banquet-title">Banquet Halls</h1>
                 <button className="view-all-button" onClick={() => navigate('/banquet')}>View All</button>
             </div>
-            <div className="banquet-container">
+            <div className="banquet-container" onClick={() => navigate('/banquet')}>
                 {banquetList.map((banquet) => (
                     <div key={banquet.id} className="banquet-card">
                         <img src={banquet.bannerImage} alt={banquet.name} className="banquet-image" />

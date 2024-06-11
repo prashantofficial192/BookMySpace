@@ -38,7 +38,7 @@ const Turf = () => {
                 <h1 className="turf-title">Turf Parks</h1>
                 <button className="view-all-button" onClick={() => navigate('/turf')}>View All</button>
             </div>
-            <div className="turf-container">
+            <div className="turf-container" onClick={() => navigate('/turf')}>
                 {turfList.map((turf) => (
                     <div key={turf.id} className="turf-card">
                         <img src={turf.bannerImage} alt={turf.name} className="turf-image" />

@@ -46,11 +46,11 @@
 }
 
 .nav-link:hover {
-    color: #ffcc00;
+    color: #3a86ff;
 }
 
 .nav-link.active {
-    color: #ffcc00;
+    color: #0496ff;
 }
 
 .nav-item {
@@ -65,7 +65,7 @@
 }
 
 .nav-item a:hover {
-    color: #ffcc00;
+    color: #3a86ff;
 }
 
 .nav-toggle {
