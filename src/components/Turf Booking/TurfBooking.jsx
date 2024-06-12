@@ -26,7 +26,7 @@ const TurfBooking = ({ selectedSport, selectedCity, selectedTurf, onClose }) => 
         };
 
         const storedBookings = JSON.parse(localStorage.getItem('bookings')) || [];
-        
+
         // Check if the turf is already booked on the selected date
         const isTurfAvailable = !storedBookings.some(
             booking => booking.type === 'turf' && booking.date === date && booking.sport === sport && booking.city === city
@@ -44,8 +44,8 @@ const TurfBooking = ({ selectedSport, selectedCity, selectedTurf, onClose }) => 
     };
 
     return (
-        <div className="turf-booking-container">
-            <h2 className="turf-booking-title">Book Turf: {turf.name}</h2>
+        <div className="turf-booking-container1">
+            <h2 className="turf-booking-title">Book {turf.name}</h2>
             <div className="turf-booking-form">
                 <div className="turf-booking-field">
                     <label htmlFor="sports" className="turf-booking-label">Sports:</label>

@@ -6,9 +6,9 @@
     gap: 15px;
     padding: 20px;
     background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     width: 350px;
     margin: 10px auto;
 }
@@ -74,4 +74,20 @@
 
 .restaurant-book-now-button:hover {
     background-color: #ba181b;
+}
+
+#animation {
+    animation: myAnim 3s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

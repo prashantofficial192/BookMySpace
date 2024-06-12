@@ -2,9 +2,14 @@
 
 @media (max-width: 768px) {
     .banquet-section {
-        padding: 20px;
+        margin: 0 auto;
         gap: 20px;
         width: 90%;
+    }
+
+    .banquet-header {
+        justify-content: space-around;
+        margin-bottom: 10px;
     }
 
     .banquet-title {
@@ -13,7 +18,7 @@
 
     .view-all-button {
         padding: 8px 16px;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .banquet-container {
@@ -22,10 +27,11 @@
 
     .banquet-card {
         width: 450px;
+        height: 400px;
     }
 
     .banquet-image {
-        height: 150px;
+        height: 250px;
     }
 
     .banquet-name {
@@ -70,13 +76,13 @@
     }
 
     .banquet-name {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .banquet-location,
     .banquet-capacity,
     .banquet-ratings {
-        font-size: 0.8rem;
-        margin: 10px auto;
+        font-size: 1rem;
+        margin: 15px auto;
     }
 }

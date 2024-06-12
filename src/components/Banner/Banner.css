@@ -5,12 +5,13 @@
 }
 
 .slider-container {
-    width: 100vw;
+    width: 95vw;
     height: 100vh;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
     /* background-color: aquamarine; */
 }
 
@@ -68,11 +69,13 @@
 .banner-item h2 {
     font-size: 3rem;
     color: white;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .banner-item p {
     font-size: 1.5rem;
     color: white;
+    font-style: italic;
 }
 
 .banner-item button {

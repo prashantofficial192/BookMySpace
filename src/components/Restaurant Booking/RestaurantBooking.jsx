@@ -106,7 +106,7 @@ const RestaurantBooking = ({ restaurant, onClose }) => {
                         onChange={(e) => setSelectedTime(e.target.value)}
                     />
                 </div>
-                <button onClick={handleBooking} className="book-now-button">Confirm Booking</button>
+                <button onClick={handleBooking} className="book-now-button">Booking</button>
                 <button onClick={onClose} className="close-button">Close</button>
             </div>
         </>

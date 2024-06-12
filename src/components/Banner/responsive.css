@@ -1,23 +1,30 @@
 @media (max-width: 768px) {
+    .slider-container {
+        width: 90vw;
+        margin: 10px auto;
+        height: 70vh;
+    }
 
     .slick-slider,
     .slick-list,
     .slick-track {
         width: 95vw;
-        height: 85vh;
+        height: 60vh;
     }
 
     .banner-item h2 {
-        font-size: 2rem;
+        font-size: 3rem;
+        margin: 0 auto;
     }
 
     .banner-item p {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        margin: 15px auto;
     }
 
     .banner-item button {
         padding: 10px 20px;
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     .banner-content {

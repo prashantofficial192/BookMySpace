@@ -93,13 +93,15 @@
 }
 
 .close-button {
-    background: #ccc;
+    background: #dc3545;
     margin-left: 10px;
+    color: white;
 }
 
-.close-button:hover {
-    background: #999;
+.close-button:hover{
+    background-color: #f44336;
 }
+
 
 /* Media queries for smaller screens */
 @media (max-width: 600px) {

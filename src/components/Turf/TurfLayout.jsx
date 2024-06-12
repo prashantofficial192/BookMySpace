@@ -108,7 +108,7 @@ const TurfLayout = () => {
 
     return (
         <>
-            <div className="turf-filter-section">
+            <div className="turf-filter-section" id='animation'>
                 <div className="turf-filter-container">
                     <label htmlFor="sports" className="turf-filter-label">Sports:</label>
                     <select
@@ -144,7 +144,7 @@ const TurfLayout = () => {
                 <button onClick={handleSearch} className="turf-search-button">Search</button>
             </div>
 
-            <div className="turf-section">
+            <div className="turf-section" id='animation'>
                 <div className="turf-container">
                     {filteredTurfs.length > 0 ? (
                         filteredTurfs.map((turf) => (

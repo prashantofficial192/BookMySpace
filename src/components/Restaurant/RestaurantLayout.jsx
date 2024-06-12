@@ -117,7 +117,7 @@ const RestaurantLayout = () => {
 
     return (
         <>
-            <div className="select-area-container">
+            <div className="select-area-container" id='animation'>
                 <div className="select-area">
                     <label htmlFor="area">Select Area:</label>
                     <select id="area" value={area} onChange={handleAreaChange} className="select-area-dropdown">
@@ -136,7 +136,7 @@ const RestaurantLayout = () => {
                 </div>
                 <button onClick={handleSearch} className="search-button">Search</button>
             </div>
-            <div className="restaurant-section">
+            <div className="restaurant-section" id='animation'>
                 <div className="restaurant-container">
                     {filteredRestaurants.map((restaurant) => (
                         <div key={restaurant.id} className="restaurant-card">

@@ -130,7 +130,7 @@ const Banquet = () => {
 
     return (
         <>
-            <div className="filter-section">
+            <div className="filter-section" id='animation'>
                 <div className="filter-container">
                     <label htmlFor="capacity">Capacity:</label>
                     <input
@@ -158,7 +158,7 @@ const Banquet = () => {
                 </div>
                 <button onClick={handleSearch} className="search-button-2">Search</button>
             </div>
-            <div className="banquet-section">
+            <div className="banquet-section" id='animation'>
                 <div className="banquet-container">
                     {filteredBanquetList.map((banquet) => (
                         <div key={banquet.id} className="banquet-card">
