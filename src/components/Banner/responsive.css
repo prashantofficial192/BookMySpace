@@ -36,7 +36,6 @@
 @media (max-width: 480px) {
     .slider-container {
         height: 50vh;
-        /* background-color: blue; */
     }
 
     .slick-slider,
@@ -44,7 +43,6 @@
     .slick-track {
         width: 95vw;
         height: 35vh;
-        /* background-color: aqua; */
     }
 
     .banner-item h2 {

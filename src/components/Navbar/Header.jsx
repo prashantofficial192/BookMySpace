@@ -1,10 +1,12 @@
 // Header.jsx
 import React, { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import './Header.css';
 
 const Header = () => {
+    const navigate = useNavigate();
+
     const [isNavOpen, setIsNavOpen] = useState(false);
 
     const toggleNav = () => {
@@ -15,7 +17,7 @@ const Header = () => {
         <header className="header">
             <div className="header-container">
                 <div className="logo">
-                    <h1>BookMySpace</h1>
+                    <h1 onClick={() => navigate('/')}>BookMySpace</h1>
                 </div>
                 <nav className={`nav ${isNavOpen ? 'nav-open' : ''}`}>
                     <ul className="nav-list">

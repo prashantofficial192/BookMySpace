@@ -88,6 +88,10 @@
     color: #555;
 }
 
+.banquet-booking-total-charges>p>span {
+    color: #007bff;
+}
+
 .banquet-booking-confirm-button,
 .banquet-booking-close-button {
     padding: 12px 24px;
@@ -116,4 +120,42 @@
 
 .banquet-booking-close-button:hover {
     background-color: #e53935;
+}
+
+
+@media (max-width: 768px) {
+    .banquet-booking-modal-container {
+        width: 80%;
+        padding: 20px;
+    }
+
+    .banquet-booking-modal-container>h2 {
+        font-size: 1.5em;
+    }
+
+    .banquet-booking-customer-details input,
+    .banquet-booking-days-selection input,
+    .banquet-booking-date-selection input {
+        width: calc(95% - 10px);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .banquet-booking-modal-container {
+        width: 90%;
+        padding: 20px;
+        margin: 10px auto;
+        border-radius: 20px;
+    }
+
+    .banquet-booking-modal-container>h2 {
+        font-size: 1.5rem;
+    }
+
+    .banquet-booking-customer-details input,
+    .banquet-booking-days-selection input,
+    .banquet-booking-date-selection input {
+        width: calc(100% - 10px);
+    }
 }

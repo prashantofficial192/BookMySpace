@@ -22,13 +22,14 @@
 
 .logo h1 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-family: 'Times New Roman', Times, serif;
-    background-color: #21D4FD;
-background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-
+    background: #1FA2FF;
+    background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
     -webkit-background-clip: text;
     color: transparent;
+    cursor: pointer;
 }
 
 
@@ -94,10 +95,11 @@ background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
 
 
 @media (max-width: 768px) {
-    .header{
+    .header {
         height: auto;
         z-index: 20;
     }
+
     .nav {
         display: none;
         flex-direction: column;

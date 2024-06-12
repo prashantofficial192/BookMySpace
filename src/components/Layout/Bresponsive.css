@@ -1,10 +1,9 @@
-/* Media Queries for Smaller Screens */
-
 @media (max-width: 768px) {
     .banquet-section {
         margin: 0 auto;
         gap: 20px;
         width: 90%;
+        background-color: white;
     }
 
     .banquet-header {
@@ -14,6 +13,7 @@
 
     .banquet-title {
         font-size: 1.5rem;
+        color: black;
     }
 
     .view-all-button {
@@ -28,6 +28,8 @@
     .banquet-card {
         width: 450px;
         height: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgb(222, 220, 220);
     }
 
     .banquet-image {
@@ -51,7 +53,10 @@
         gap: 30px;
         margin: 20px auto;
         width: 95%;
-        background-color: white;
+    }
+
+    .banquet-header {
+        justify-content: space-between;
     }
 
     .banquet-title {

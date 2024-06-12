@@ -98,12 +98,11 @@
     color: white;
 }
 
-.close-button:hover{
+.close-button:hover {
     background-color: #f44336;
 }
 
 
-/* Media queries for smaller screens */
 @media (max-width: 600px) {
     .table {
         padding: 10px;

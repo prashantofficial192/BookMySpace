@@ -45,7 +45,7 @@ const TurfBooking = ({ selectedSport, selectedCity, selectedTurf, onClose }) => 
 
     return (
         <div className="turf-booking-container1">
-            <h2 className="turf-booking-title">Book {turf.name}</h2>
+            <h2 className="turf-booking-title">Book <span>{turf.name}</span></h2>
             <div className="turf-booking-form">
                 <div className="turf-booking-field">
                     <label htmlFor="sports" className="turf-booking-label">Sports:</label>
@@ -119,7 +119,7 @@ const TurfBooking = ({ selectedSport, selectedCity, selectedTurf, onClose }) => 
                     />
                 </div>
                 <div className="turf-booking-total">
-                    Total Charges: ₹{totalCharges}
+                    Total Charges: <span> ₹{totalCharges} </span>
                 </div>
                 <div className="turf-booking-buttons">
                     <button onClick={handleBooking} className="turf-booking-button">Book</button>

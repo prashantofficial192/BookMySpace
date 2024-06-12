@@ -38,9 +38,11 @@
 
 }
 
-.footer-content-left > h1 {
+.footer-content-left>h1 {
     font-family: 'Times New Roman', Times, serif;
-    background-image: linear-gradient(50deg, #0d00ff, #8d03bb, #af217a, #bf3939);
+    background: #1FA2FF;
+    background: -webkit-linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
+    background: linear-gradient(to right, #A6FFCB, #12D8FA, #1FA2FF);
     -webkit-background-clip: text;
     color: transparent;
 }

@@ -15,7 +15,7 @@ const BanquetBooking = ({ banquet, onClose }) => {
 
     const handleOptionChange = (option) => {
         setSelectedOption(option);
-        setTotalCharges(selectedDays * (option === 'innerHall' ? 15000 : 20000)); // Adjust charges based on option
+        setTotalCharges(selectedDays * (option === 'innerHall' ? 15000 : 20000));
     };
 
     const handleDaysChange = (e) => {
@@ -125,7 +125,7 @@ const BanquetBooking = ({ banquet, onClose }) => {
                     />
                 </div>
                 <div className="banquet-booking-total-charges">
-                    <p>Total Charges: ₹ {totalCharges}</p>
+                    <p>Total Charges: ₹<span>{totalCharges}</span></p>
                 </div>
                 <button onClick={handleBookingConfirmation} className="banquet-booking-confirm-button">Book</button>
                 <button onClick={onClose} className="banquet-booking-close-button">Close</button>

@@ -1,5 +1,3 @@
-/* Media Queries for Smaller Screens */
-
 @media (max-width: 768px) {
     .turf-section {
         margin: 0 auto;
@@ -15,6 +13,7 @@
 
     .turf-title {
         font-size: 1.5rem;
+        color: black;
     }
 
     .view-all-button {
@@ -29,6 +28,8 @@
     .turf-card {
         height: 420px;
         width: 450px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgb(222, 220, 220);
     }
 
     .turf-image {
@@ -52,6 +53,10 @@
         gap: 30px;
         margin: 20px auto;
         width: 95%;
+    }
+
+    .turf-header {
+        justify-content: space-between;
     }
 
     .turf-title {
