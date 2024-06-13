@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./TurfLayout.css";
 import TurfBooking from '../Turf Booking/TurfBooking';
 
+// List of turfs with details
 const turfList1 = [
     {
         id: 1,
@@ -79,12 +80,14 @@ const turfList1 = [
 
 
 const TurfLayout = () => {
+    // State variables to manage the component's state
     const [selectedTurf, setSelectedTurf] = useState(null);
     const [selectedSport, setSelectedSport] = useState('');
     const [selectedCity, setSelectedCity] = useState('');
     const [filteredTurfs, setFilteredTurfs] = useState(turfList1);
     const [showBooking, setShowBooking] = useState(false);
 
+    // Function to handle the search action
     const handleSearch = () => {
         const filtered = turfList1.filter(turf => {
             return (
@@ -92,9 +95,11 @@ const TurfLayout = () => {
                 (selectedCity === '' || turf.location === selectedCity)
             );
         });
+        // Update the filtered turf list based on selected sport and city
         setFilteredTurfs(filtered);
     };
 
+    // Function to handle the "Book Now" button click
     const handleBookNow = (sport, city, turf) => {
         setSelectedTurf(turf);
         setSelectedSport(sport);
@@ -102,6 +107,7 @@ const TurfLayout = () => {
         setShowBooking(true);
     };
 
+    // Function to close the booking modal
     const handleCloseBooking = () => {
         setShowBooking(false);
     };

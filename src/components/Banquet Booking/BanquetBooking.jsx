@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './BanquetBooking.css';
 
 const BanquetBooking = ({ banquet, onClose }) => {
+
+    // Define state variables using useState hook
     const [selectedOption, setSelectedOption] = useState('innerHall');
     const [selectedDays, setSelectedDays] = useState(1);
     const [selectedDate, setSelectedDate] = useState('');
@@ -9,25 +11,43 @@ const BanquetBooking = ({ banquet, onClose }) => {
     const [customerName, setCustomerName] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
 
+    // Return null if banquet is not provided
     if (!banquet) {
         return null;
     }
 
+    // Handle changes in booking option
     const handleOptionChange = (option) => {
         setSelectedOption(option);
         setTotalCharges(selectedDays * (option === 'innerHall' ? 15000 : 20000));
     };
 
+    // Handle changes in number of days
     const handleDaysChange = (e) => {
         const days = parseInt(e.target.value, 10);
         setSelectedDays(days);
         setTotalCharges(days * (selectedOption === 'innerHall' ? 15000 : 20000));
     };
 
+    // Handle changes in selected date
     const handleDateChange = (e) => {
-        setSelectedDate(e.target.value);
+        const selectedDate = e.target.value;
+
+        // Prevent selecting past dates
+        const today = new Date();
+        const selected = new Date(selectedDate);
+
+        if (selected < today) {
+
+            // If selected date is in the past, reset date state or alert the user
+            setSelectedDate('');
+            alert('Please select a date from today onwards.');
+        } else {
+            setSelectedDate(selectedDate); // Update date state if it's valid
+        }
     };
 
+    // Handle booking confirmation
     const handleBookingConfirmation = () => {
         if (!selectedDate || !customerName || !mobileNumber) {
             alert("Please fill in all fields.");
@@ -45,8 +65,10 @@ const BanquetBooking = ({ banquet, onClose }) => {
             mobileNumber,
         };
 
+        // Retrieve existing bookings from local storage or initialize with an empty array
         const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
 
+        // Check if the banquet hall is already booked on the selected date
         const isBooked = existingBookings.some(booking =>
             booking.type === 'banquet' &&
             booking.banquetName === newBooking.banquetName &&
@@ -55,10 +77,13 @@ const BanquetBooking = ({ banquet, onClose }) => {
         );
 
         if (isBooked) {
-            alert('Hall Booked Already or unavailable');
+            alert('The banquet hall is already booked for the selected date and option.');
         } else {
+
+            // Add new booking to existing bookings and save to local storage
             existingBookings.push(newBooking);
             localStorage.setItem('bookings', JSON.stringify(existingBookings));
+
             alert(`You have booked ${newBooking.option} for ${selectedDays} days on ${selectedDate}. Total Charges: ₹${totalCharges}`);
             onClose();
         }
@@ -122,6 +147,7 @@ const BanquetBooking = ({ banquet, onClose }) => {
                         id="banquet-date"
                         value={selectedDate}
                         onChange={handleDateChange}
+                        min={new Date().toISOString().split('T')[0]} // Set min attribute to current date
                     />
                 </div>
                 <div className="banquet-booking-total-charges">

@@ -8,15 +8,13 @@ import "./responsive.css"
 
 const Footer = () => {
     return (
-        <div className='footer-section'>
+        <footer className='footer-section'>
             <div className="footer">
                 <div className="footer-content">
                     <div className="footer-content-left">
                         <h1>BookMySpace</h1>
-                        {/* <p>BookMySpace is a platform that helps you find the perfect venue for your events.</p> */}
                     </div>
                     <div className="footer-content-center">
-                        {/* <h2>Quick Links</h2> */}
                         <ul>
                             <li>
                                 <NavLink
@@ -65,7 +63,7 @@ const Footer = () => {
                     <p>© 2024 BookMySpace. All Rights Reserved.</p>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
 

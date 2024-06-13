@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import "./RestaurantLayout.css"
 import RestaurantBooking from '../Restaurant Booking/RestaurantBooking';
 
+
+// List of restaurants with details
 const restaurants = [
     {
         id: 1,
@@ -94,23 +96,32 @@ const RestaurantLayout = () => {
     const [filteredRestaurants, setFilteredRestaurants] = useState(restaurants);
     const [selectedRestaurant, setSelectedRestaurant] = useState(null);
 
+    // Function to handle the change in area selection
     const handleAreaChange = (e) => {
         setArea(e.target.value);
     };
 
+    // Function to handle the search action
     const handleSearch = () => {
         if (area === '') {
+
+            // If no area is selected, show all restaurants
             setFilteredRestaurants(restaurants);
         } else {
             const filtered = restaurants.filter(restaurant => restaurant.area === area);
+            // Update the filtered restaurant list based on the selected area
             setFilteredRestaurants(filtered);
         }
     };
 
+    // Function to handle the "Book Now" button click
     const handleBookNow = (restaurant) => {
+
+        // Set the selected restaurant for booking
         setSelectedRestaurant(restaurant);
     };
 
+    // Function to close the booking modal
     const handleCloseBooking = () => {
         setSelectedRestaurant(null);
     };

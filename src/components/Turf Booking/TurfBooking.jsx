@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './TurfBooking.css';
 
 const TurfBooking = ({ selectedSport, selectedCity, selectedTurf, onClose }) => {
+
+    // Define state variables using useState hook
     const [turf, setTurf] = useState(selectedTurf);
     const [sport, setSport] = useState(selectedSport);
     const [city, setCity] = useState(selectedCity);
@@ -9,9 +11,32 @@ const TurfBooking = ({ selectedSport, selectedCity, selectedTurf, onClose }) => 
     const [mobileNumber, setMobileNumber] = useState('');
     const [hours, setHours] = useState(1);
     const [date, setDate] = useState('');
+
+    // Charge per hour for the turf
     const chargePerHour = 500;
+
+    // Calculate total charges
     const totalCharges = hours * chargePerHour;
 
+    // Handle date change
+    const handleDateChange = (e) => {
+        const selectedDate = e.target.value;
+
+        // Prevent selecting past dates
+        const today = new Date();
+        const selected = new Date(selectedDate);
+
+        if (selected < today) {
+
+            // If selected date is in the past, reset date state to empty string or current date
+            setDate('');
+            alert('Please select a date from today onwards.');
+        } else {
+            setDate(selectedDate); // Update date state if it's valid
+        }
+    };
+
+    // Handle booking action
     const handleBooking = () => {
         const bookingDetails = {
             type: 'turf',
@@ -25,6 +50,7 @@ const TurfBooking = ({ selectedSport, selectedCity, selectedTurf, onClose }) => 
             date
         };
 
+        // Retrieve existing bookings from local storage or initialize with an empty array
         const storedBookings = JSON.parse(localStorage.getItem('bookings')) || [];
 
         // Check if the turf is already booked on the selected date
@@ -33,9 +59,10 @@ const TurfBooking = ({ selectedSport, selectedCity, selectedTurf, onClose }) => 
         );
 
         if (isTurfAvailable) {
+            // Add new booking to existing bookings and save to local storage
             storedBookings.push(bookingDetails);
             localStorage.setItem('bookings', JSON.stringify(storedBookings));
-            console.log('Booking Details:', bookingDetails);
+
             alert(`Booking confirmed! Total Charges: ₹${totalCharges}`);
             onClose();
         } else {
@@ -83,8 +110,9 @@ const TurfBooking = ({ selectedSport, selectedCity, selectedTurf, onClose }) => 
                         type="date"
                         id="date"
                         value={date}
-                        onChange={(e) => setDate(e.target.value)}
+                        onChange={handleDateChange}
                         className="turf-booking-input"
+                        min={new Date().toISOString().split('T')[0]} // Set min attribute to current date
                     />
                 </div>
                 <div className="turf-booking-field">

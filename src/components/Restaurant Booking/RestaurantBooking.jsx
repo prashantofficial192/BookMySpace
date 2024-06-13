@@ -2,16 +2,20 @@ import React, { useState } from 'react';
 import './RestaurantBooking.css';
 
 const RestaurantBooking = ({ restaurant, onClose }) => {
+
+    // Define state variables using useState hook
     const [selectedTable, setSelectedTable] = useState(null);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
     const [customerName, setCustomerName] = useState('');
     const [mobileNumber, setMobileNumber] = useState('');
 
+    // If no restaurant is provided, return null to avoid rendering anything
     if (!restaurant) {
         return null;
     }
 
+    // List of available tables with their capacities
     const tables = [
         { id: 1, capacity: 2 },
         { id: 2, capacity: 4 },
@@ -20,12 +24,34 @@ const RestaurantBooking = ({ restaurant, onClose }) => {
         { id: 5, capacity: 10 },
     ];
 
+    // Handle table selection
     const handleTableSelect = (table) => {
-        setSelectedTable(table);
+        setSelectedTable(table); // Set the selected table in the state
     };
 
+    // Handle date change with validation
+    const handleDateChange = (e) => {
+        const selectedDate = e.target.value;
+
+        // Prevent selecting past dates
+        const today = new Date();
+        const selected = new Date(selectedDate);
+
+        if (selected < today) {
+
+            // If selected date is in the past, reset date state or alert the user
+            setSelectedDate('');
+            alert('Please select a date from today onwards.');
+        } else {
+            setSelectedDate(selectedDate); // Update date state if it's valid
+        }
+    };
+
+    // Check if all required fields are filled
     const handleBooking = () => {
         if (selectedTable && selectedDate && selectedTime && customerName && mobileNumber) {
+
+            // Create booking details object
             const bookingDetails = {
                 type: 'restaurant',
                 restaurantName: restaurant.name,
@@ -36,6 +62,7 @@ const RestaurantBooking = ({ restaurant, onClose }) => {
                 mobileNumber,
             };
 
+            // Get existing bookings from local storage or initialize with an empty array
             const existingBookings = JSON.parse(localStorage.getItem('bookings')) || [];
 
             // Check if the same booking already exists
@@ -47,8 +74,10 @@ const RestaurantBooking = ({ restaurant, onClose }) => {
             );
 
             if (isBookingAvailable) {
-                alert('Table not available for the selected date and time.');
+                alert('Table not available for the selected Date and Time.');
             } else {
+
+                // Add new booking to existing bookings and save to local storage
                 const updatedBookings = [...existingBookings, bookingDetails];
                 localStorage.setItem('bookings', JSON.stringify(updatedBookings));
 
@@ -96,7 +125,8 @@ const RestaurantBooking = ({ restaurant, onClose }) => {
                         type="date"
                         id="date"
                         value={selectedDate}
-                        onChange={(e) => setSelectedDate(e.target.value)}
+                        onChange={handleDateChange} // Use handleDateChange for onChange event
+                        min={new Date().toISOString().split('T')[0]} // Set min attribute to current date
                     />
                     <label htmlFor="time">Select Time:</label>
                     <input

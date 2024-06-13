@@ -3,6 +3,7 @@ import "./BanquetLayout.css"
 import BanquetBooking from "../Banquet Booking/BanquetBooking"
 
 
+// List of banquet halls with details
 const banquetList = [
     {
         id: 1,
@@ -109,6 +110,7 @@ const Banquet = () => {
     const [showBookingModal, setShowBookingModal] = useState(false);
     const [selectedBanquet, setSelectedBanquet] = useState(null);
 
+    // Function to handle the search action
     const handleSearch = () => {
         const filtered = banquetList.filter(banquet => {
             return (
@@ -116,15 +118,23 @@ const Banquet = () => {
                 (ratings === 0 || banquet.ratings >= ratings)
             );
         });
+        // Update the filtered banquet list
         setFilteredBanquetList(filtered);
     };
 
+    // Function to handle the "Book Now" button click
     const handleBookNow = (banquet) => {
+
+        // Set the selected banquet
         setSelectedBanquet(banquet);
+
+        // Show the booking modal
         setShowBookingModal(true);
     };
 
+    // Function to close the booking modal
     const handleCloseBookingModal = () => {
+        // Hide the booking modal
         setShowBookingModal(false);
     };
 

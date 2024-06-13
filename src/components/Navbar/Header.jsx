@@ -53,7 +53,6 @@ const Header = () => {
                                 Turf
                             </NavLink>
                         </li>
-                        {/* <li className="nav-item"><a href="#contact">Contact</a></li> */}
                     </ul>
                 </nav>
                 <button className="nav-toggle" onClick={toggleNav}>
